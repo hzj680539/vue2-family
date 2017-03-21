@@ -7,19 +7,19 @@ export default {
       children: [
         {
           name: '网站概况',
-          path: '/statistic-data/website-overview'
+          path: '/website-overview'
         },
         {
           name: '实时访客',
-          path: '/statistic-data/realtime-visitor'
+          path: '/realtime-visitor'
         },
         {
           name: '趋势分析',
-          path: '/statistic-data/trend-analysis'
+          path: '/trend-analysis'
         },
         {
           name: '受访页面',
-          path: '/statistic-data/visited-page'
+          path: '/visited-page'
         }
       ]
     },
@@ -30,23 +30,23 @@ export default {
       children: [
         {
           name: '询价单审核',
-          path: '/manage-deal/website-overview'
+          path: '/website-overview'
         },
         {
           name: '工厂智选',
-          path: '/manage-deal/realtime-visitor'
+          path: '/realtime-visitor'
         },
         {
           name: '审核记录',
-          path: '/manage-deal/trend-analysis'
+          path: '/trend-analysis'
         },
         {
           name: '报价单管理',
-          path: '/manage-deal/visited-page'
+          path: '/visited-page'
         },
         {
           name: '平台订单管理',
-          path: '/manage-deal/visited-page'
+          path: '/visited-page'
         }
       ]
     },
@@ -57,23 +57,23 @@ export default {
       children: [
         {
           name: '询价单审核',
-          path: '/manage-deal/website-overview'
+          path: '/website-overview'
         },
         {
           name: '工厂智选',
-          path: '/manage-deal/realtime-visitor'
+          path: '/realtime-visitor'
         },
         {
           name: '审核记录',
-          path: '/manage-deal/trend-analysis'
+          path: '/trend-analysis'
         },
         {
           name: '报价单管理',
-          path: '/manage-deal/visited-page'
+          path: '/visited-page'
         },
         {
           name: '平台订单管理',
-          path: '/manage-deal/visited-page'
+          path: '/visited-page'
         }
       ]
     }

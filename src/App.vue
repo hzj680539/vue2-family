@@ -1,12 +1,3 @@
 <template>
-  <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-</style>

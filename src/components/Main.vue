@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <section class="header">
       <v-header/>
     </section>
@@ -18,10 +18,10 @@
 </template>
 
 <script>
-  import VHeader from './VHeader'
-  import VFooter from './VFooter'
-  import SideLeft from './SideLeft'
-  import SideRight from './SideRight'
+  import VHeader from './layout/VHeader'
+  import VFooter from './layout/VFooter'
+  import SideLeft from './layout/SideLeft'
+  import SideRight from './layout/SideRight'
 
   export default {
     data () {
@@ -34,6 +34,12 @@
       VFooter,
       SideLeft,
       SideRight
+    },
+    created () {
+      let user = sessionStorage.getItem('user')
+      if (!user) {
+        this.$router.replace({path: '/index'})
+      }
     }
   }
 

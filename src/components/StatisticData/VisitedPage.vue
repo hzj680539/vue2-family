@@ -1,3 +1,3 @@
 <template>
-  <h1>SideRight</h1>
+  <h1>VisitedPage</h1>
 </template>

@@ -19,7 +19,7 @@
 
 <script>
   import { mapActions } from 'vuex'
-  import { USER_SIGNIN } from '../store/user/user'
+  import { USER_SIGNIN } from '../../store/user/user'
   export default {
     data () {
       return {
@@ -35,14 +35,14 @@
         if (!this.user.name || !this.user.password) return
         if (this.user.name === 'admin' && this.user.password === '123') {
           this.USER_SIGNIN(this.user)
-          this.$router.replace({path: 'main'})
+          this.$router.replace({path: '/'})
         }
       }
     }
   }
 </script>
 
-<style>
+<style lang="less" scoped>
   .login-box {
     position: relative;
     top: 50vh;
@@ -51,8 +51,8 @@
     height: 400px;
     transform: translate(-200px, -300px);
     background: lightblue;
-  }
-  .line {
-    padding: 10px;
+    .line {
+      padding: 10px;
+    }
   }
 </style>

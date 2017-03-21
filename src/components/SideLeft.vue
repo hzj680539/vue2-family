@@ -1,49 +1,41 @@
 <template>
-  <div>
-    <Row>
-      <Menu :theme="theme2" :open-keys="['1']" accordion>
-        <Submenu key="1" name="1">
-          <template slot="title">
-            <Icon type="ios-paper"></Icon>
-            内容管理
-          </template>
-          <Menu-item key="1-1" name="1-1">文章管理</Menu-item>
-          <Menu-item key="1-2" name="1-2">评论管理</Menu-item>
-          <Menu-item key="1-3" name="1-3">举报管理</Menu-item>
-        </Submenu>
-        <Submenu key="2" name="2">
-          <template slot="title">
-            <Icon type="ios-people"></Icon>
-            用户管理
-          </template>
-          <Menu-item key="2-1" name="2-1">新增用户</Menu-item>
-          <Menu-item key="2-2" name="2-2">活跃用户</Menu-item>
-        </Submenu>
-        <Submenu key="3" name="3">
-          <template slot="title">
-            <Icon type="stats-bars"></Icon>
-            统计分析
-          </template>
-          <Menu-group title="使用">
-            <Menu-item key="3-1" name="3-1">新增和启动</Menu-item>
-            <Menu-item key="3-2" name="3-2">活跃分析</Menu-item>
-            <Menu-item key="3-3" name="3-3">时段分析</Menu-item>
-          </Menu-group>
-          <Menu-group title="留存">
-            <Menu-item key="3-4" name="1-4">用户留存</Menu-item>
-            <Menu-item key="3-5" name="1-5">流失用户</Menu-item>
-          </Menu-group>
-        </Submenu>
-      </Menu>
-    </Row>
+  <div class="navbar">
+    <ul>
+      <li v-for="item in navbarList">
+        <div class="level-one">{{item.name}}</div>
+        <ul v-if="item.children && item.children.length">
+          <li v-for="subitem in item.children">
+            <div class="level-two">{{subitem.name}}</div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div @click="add">Click</div>
   </div>
 </template>
+
 <script>
+  import navbar from '../config/navbar'
+
   export default {
     data () {
       return {
-        theme2: 'light'
+        navbarList: navbar.navbarList
+      }
+    },
+    methods: {
+      add () {
+        console.dir(this.navbarList)
       }
     }
   }
 </script>
+
+<style scoped>
+  ul li {
+    list-style: none;
+  }
+  .level-one {
+    background: blue;
+  }
+</style>

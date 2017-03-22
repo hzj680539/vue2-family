@@ -4,6 +4,7 @@ export default {
       id: 1,
       name: '数据统计',
       path: '/statistic-data',
+      showChildren: true,
       children: [
         {
           name: '网站概况',
@@ -27,26 +28,27 @@ export default {
       id: 2,
       name: '交易管理',
       path: '/manage-deal',
+      showChildren: false,
       children: [
         {
           name: '询价单审核',
-          path: '/website-overview'
+          path: '/check-enquiry-list'
         },
         {
           name: '工厂智选',
-          path: '/realtime-visitor'
+          path: '/factory-select'
         },
         {
           name: '审核记录',
-          path: '/trend-analysis'
+          path: '/check-record'
         },
         {
           name: '报价单管理',
-          path: '/visited-page'
+          path: '/manage-offer-list'
         },
         {
           name: '平台订单管理',
-          path: '/visited-page'
+          path: '/manage-order-list'
         }
       ]
     },
@@ -54,26 +56,35 @@ export default {
       id: 3,
       name: '类目管理',
       path: '/manage-category',
+      showChildren: false,
       children: [
         {
-          name: '询价单审核',
-          path: '/website-overview'
+          name: '基础数据维护',
+          path: '/maintain-basedata'
+        }
+      ]
+    },
+    {
+      id: 4,
+      name: '运营管理',
+      path: '/manage-operation',
+      showChildren: false,
+      children: [
+        {
+          name: '运营人员维护',
+          path: '/maintain-operation-staff'
         },
         {
-          name: '工厂智选',
-          path: '/realtime-visitor'
+          name: '运营分组维护',
+          path: '/maintain-operation-group'
         },
         {
-          name: '审核记录',
-          path: '/trend-analysis'
+          name: '业务区域维护',
+          path: '/maintain-business-area'
         },
         {
-          name: '报价单管理',
-          path: '/visited-page'
-        },
-        {
-          name: '平台订单管理',
-          path: '/visited-page'
+          name: '区域信息维护',
+          path: '/maintain-area-info'
         }
       ]
     }

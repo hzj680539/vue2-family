@@ -6,10 +6,9 @@ import Main from '@/components/Main'
 
 Vue.use(Router)
 
-import RealtimeVisitor from '../components/StatisticData/RealtimeVisitor'
-import TrendAnalysis from '../components/StatisticData/TrendAnalysis'
-import VisitedPage from '../components/StatisticData/VisitedPage'
-import WebsiteOverview from '../components/StatisticData/WebsiteOverview'
+import StatisticData from '../components/StatisticData' // 数据统计
+import ManageDeal from '../components/ManageDeal' // 交易管理
+import ManageCategory from '../components/ManageCategory' // 类目管理
 
 export default new Router({
   routes: [
@@ -35,19 +34,57 @@ export default new Router({
                 {
                   path: '',
                   alias: 'website-overview',
-                  component: WebsiteOverview
+                  component: StatisticData.WebsiteOverview
                 },
                 {
                   path: 'visited-page',
-                  component: VisitedPage
+                  component: StatisticData.VisitedPage
                 },
                 {
                   path: 'trend-analysis',
-                  component: TrendAnalysis
+                  component: StatisticData.TrendAnalysis
                 },
                 {
                   path: 'realtime-visitor',
-                  component: RealtimeVisitor
+                  component: StatisticData.RealtimeVisitor
+                }
+              ]
+            },
+            {
+              path: '/manage-deal',
+              components: { content: App },
+              children: [
+                {
+                  path: '',
+                  alias: 'check-enquiry-list',
+                  component: ManageDeal.CheckEnquiryList
+                },
+                {
+                  path: 'factory-select',
+                  component: ManageDeal.FactorySelect
+                },
+                {
+                  path: 'check-record',
+                  component: ManageDeal.CheckRecord
+                },
+                {
+                  path: 'manage-offer-list',
+                  component: ManageDeal.ManageOfferList
+                },
+                {
+                  path: 'manage-order-list',
+                  component: ManageDeal.ManageOrderList
+                }
+              ]
+            },
+            {
+              path: '/manage-category',
+              components: { content: App },
+              children: [
+                {
+                  path: '',
+                  alias: 'maintain-basedata',
+                  component: ManageCategory.MaintainBasedata
                 }
               ]
             }

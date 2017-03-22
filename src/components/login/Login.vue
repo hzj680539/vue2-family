@@ -49,7 +49,7 @@
     left: 50vw;
     width: 400px;
     height: 400px;
-    transform: translate(-200px, -300px);
+    transform: translate(-200px, -200px);
     background: lightblue;
     .line {
       padding: 10px;

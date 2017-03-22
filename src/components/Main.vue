@@ -18,10 +18,7 @@
 </template>
 
 <script>
-  import VHeader from './layout/VHeader'
-  import VFooter from './layout/VFooter'
-  import SideLeft from './layout/SideLeft'
-  import SideRight from './layout/SideRight'
+  import Layout from './layout'
 
   export default {
     data () {
@@ -30,10 +27,10 @@
       }
     },
     components: {
-      VHeader,
-      VFooter,
-      SideLeft,
-      SideRight
+      VHeader: Layout.VHeader,
+      VFooter: Layout.VFooter,
+      SideLeft: Layout.SideLeft,
+      SideRight: Layout.SideRight
     },
     created () {
       let user = sessionStorage.getItem('user')

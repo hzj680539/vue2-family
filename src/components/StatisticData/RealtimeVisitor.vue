@@ -11,16 +11,22 @@
   export default {
     data () {
       return {
-        data: ''
+        data: '',
+        postData: {
+          cmd: 'i5service/common/divisionList',
+          rows: 10,
+          parameters:
+          {
+            iToken: '6f674ef8-3e12-41fd-953c-a3c05300314f',
+            parentId: 1
+          }
+        }
       }
     },
     mounted () {
-      console.log('coming')
-      let postData = '{"cmd":"i5service/organization/readPage","rows":10,"parameters":{"name":"","parentId":"","managerName":"","level":1,"status":1,"iToken":"6f674ef8-3e12-41fd-953c-a3c05300314f"}}'
-      Vue.axios(postData, (data) => {
-        console.info('data:')
-        console.dir(data)
+      Vue.AxiosHelper(this.postData, (data) => {
         this.data = data
+        console.dir(data.response)
       })
     }
   }

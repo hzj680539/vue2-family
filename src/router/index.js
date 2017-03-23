@@ -6,9 +6,15 @@ import Main from '@/components/Main'
 
 Vue.use(Router)
 
-import StatisticData from '../components/StatisticData' // 数据统计
+// import StatisticData from '../components/StatisticData' // 数据统计
 import ManageDeal from '../components/ManageDeal' // 交易管理
 import ManageCategory from '../components/ManageCategory' // 类目管理
+// 懒加载的组件
+// 数据统计
+const WebsiteOverview = resolve => require(['../components/StatisticData/WebsiteOverview'], resolve)
+const VisitedPage = resolve => require(['../components/StatisticData/VisitedPage'], resolve)
+const TrendAnalysis = resolve => require(['../components/StatisticData/TrendAnalysis'], resolve)
+const RealtimeVisitor = resolve => require(['../components/StatisticData/RealtimeVisitor'], resolve)
 
 export default new Router({
   routes: [
@@ -34,19 +40,19 @@ export default new Router({
                 {
                   path: '',
                   alias: 'website-overview',
-                  component: StatisticData.WebsiteOverview
+                  component: WebsiteOverview
                 },
                 {
                   path: 'visited-page',
-                  component: StatisticData.VisitedPage
+                  component: VisitedPage
                 },
                 {
                   path: 'trend-analysis',
-                  component: StatisticData.TrendAnalysis
+                  component: TrendAnalysis
                 },
                 {
                   path: 'realtime-visitor',
-                  component: StatisticData.RealtimeVisitor
+                  component: RealtimeVisitor
                 }
               ]
             },

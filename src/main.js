@@ -4,14 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import axios from './axios/index'
 import './assets/css/normalize.css'
+
+// 绑定axios于Vue对象
+import { AxiosHelper } from './axios/index'
+Vue.AxiosHelper = AxiosHelper
 
 Vue.config.productionTip = false
 
-Vue.axios = axios
-console.dir(Vue)
-console.dir(axios)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
